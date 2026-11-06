@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" class="h-full bg-slate-950 text-slate-100">
+<html lang="es" class="h-full bg-[#0b1417] text-[#ecf6f8]">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>CareTrack - Internación Domiciliaria & Ortopedia en Comodato</title>
+  <title>CareTrack v1.0.01 — Internación Domiciliaria & Ortopedia en Comodato</title>
   <!-- Inline SVG Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236366f1'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2314b8a6'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @media print {
@@ -16,63 +16,66 @@
       min-height: 44px;
       touch-action: manipulation;
     }
+    h1 { font-size: 1.75rem; line-height: 2.25rem; font-weight: 800; }
+    h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 800; }
+    h3 { font-size: 1.15rem; line-height: 1.75rem; font-weight: 700; }
   </style>
 </head>
-<body class="h-full flex flex-col font-sans selection:bg-indigo-500 selection:text-white antialiased">
+<body class="h-full flex flex-col font-sans text-sm selection:bg-teal-500 selection:text-white antialiased bg-[#0b1417]">
   <!-- Toast Alerts Container -->
   <div id="toastContainer" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
 
-  <!-- Header -->
-  <header class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-30 no-print">
+  <!-- Header: Clinical Healthcare Navigation -->
+  <header class="bg-[#101f24] border-b border-[#1d3a44] sticky top-0 z-30 no-print shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25">
+        <div class="w-10 h-10 rounded-lg bg-[#152e36] border border-[#214c59] flex items-center justify-center text-[#2dd4bf]">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
           </svg>
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <span class="text-lg font-black tracking-tight text-white">CareTrack</span>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-indigo-950 text-indigo-300 border border-indigo-800 font-semibold">v1.0.00</span>
+            <span class="text-lg font-black tracking-tight text-[#f2fafb]">CareTrack</span>
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#152e36] text-[#2dd4bf] border border-[#214c59] font-bold">v1.0.01</span>
           </div>
-          <p class="text-[10px] text-slate-400">Internación Domiciliaria & Ortopedia en Comodato</p>
+          <p class="text-xs text-[#90b4bf]">Internación Domiciliaria & Ortopedia en Comodato</p>
         </div>
       </div>
 
       <div class="flex items-center gap-2.5">
         <!-- Wake Lock Button (Directiva 9) -->
-        <button id="wakeLockBtn" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center gap-1.5 border border-slate-700" title="Screen Wake Lock API">
-          🌙 Modo Conducción: OFF
+        <button id="wakeLockBtn" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-[#172e36] hover:bg-[#1e3c46] text-[#d1e8ef] flex items-center gap-2 border border-[#254d5a]" title="Screen Wake Lock API">
+          <span>🌙</span> <span class="hidden sm:inline">Modo Conducción:</span> <span>OFF</span>
         </button>
 
         <!-- Red 24/7 Biomedical Emergency Dispatch -->
-        <button data-action="open-emergency-modal" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-600/30 flex items-center gap-1.5 animate-pulse">
-          🚨 Emergencia 24/7
+        <button data-action="open-emergency-modal" class="px-4 py-2 rounded-lg text-xs font-black bg-[#e11d48] hover:bg-[#be123c] text-white shadow flex items-center gap-1.5 transition">
+          <span>🚨</span> <span>Emergencia 24/7</span>
         </button>
       </div>
     </div>
 
     <!-- Navigation Tabs -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800/60 overflow-x-auto py-2">
-      <nav class="flex space-x-2">
-        <button data-tab="dashboard" class="px-4 py-2 rounded-xl text-sm font-semibold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 flex items-center gap-2">
-          📊 Panel General
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-[#18313a] overflow-x-auto py-2 bg-[#0d1a1e]">
+      <nav class="flex space-x-1.5">
+        <button data-tab="dashboard" class="px-3.5 py-2 rounded-lg text-xs font-bold bg-[#134e4a] text-[#ccfbf1] border border-[#2dd4bf]/40 flex items-center gap-2">
+          <span>📊</span> <span>Panel General</span>
         </button>
-        <button data-tab="patients" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80 flex items-center gap-2">
-          👥 Pacientes
+        <button data-tab="patients" class="px-3.5 py-2 rounded-lg text-xs font-medium bg-[#122228] hover:bg-[#183038] text-[#93b3bd] hover:text-[#f2fafb] border border-[#1b343d] flex items-center gap-2">
+          <span>👥</span> <span>Pacientes</span>
         </button>
-        <button data-tab="equipment" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80 flex items-center gap-2">
-          🩺 Equipos Comodato
+        <button data-tab="equipment" class="px-3.5 py-2 rounded-lg text-xs font-medium bg-[#122228] hover:bg-[#183038] text-[#93b3bd] hover:text-[#f2fafb] border border-[#1b343d] flex items-center gap-2">
+          <span>🩺</span> <span>Equipos Comodato</span>
         </button>
-        <button data-tab="visits" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80 flex items-center gap-2">
-          📍 Certificar Visita
+        <button data-tab="visits" class="px-3.5 py-2 rounded-lg text-xs font-medium bg-[#122228] hover:bg-[#183038] text-[#93b3bd] hover:text-[#f2fafb] border border-[#1b343d] flex items-center gap-2">
+          <span>📍</span> <span>Certificar Visita</span>
         </button>
-        <button data-tab="emergency" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80 flex items-center gap-2">
-          🚨 Guardia Swap 24/7
+        <button data-tab="emergency" class="px-3.5 py-2 rounded-lg text-xs font-medium bg-[#122228] hover:bg-[#183038] text-[#93b3bd] hover:text-[#f2fafb] border border-[#1b343d] flex items-center gap-2">
+          <span>🚨</span> <span>Guardia Swap 24/7</span>
         </button>
-        <button data-tab="settlements" class="px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80 flex items-center gap-2">
-          💰 Lotes Obras Sociales
+        <button data-tab="settlements" class="px-3.5 py-2 rounded-lg text-xs font-medium bg-[#122228] hover:bg-[#183038] text-[#93b3bd] hover:text-[#f2fafb] border border-[#1b343d] flex items-center gap-2">
+          <span>💰</span> <span>Lotes Obras Sociales</span>
         </button>
       </nav>
     </div>
@@ -86,19 +89,19 @@
   </main>
 
   <!-- Main Modal -->
-  <div id="mainModal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative">
-      <div class="flex justify-between items-center mb-4 border-b border-slate-800 pb-3">
-        <h3 id="modalTitle" class="text-base font-bold text-white">Modal</h3>
-        <button data-action="close-modal" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 text-lg">&times;</button>
+  <div id="mainModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-[#101f24] border border-[#1d3a44] rounded-xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative">
+      <div class="flex justify-between items-center mb-4 border-b border-[#1d3a44] pb-3">
+        <h3 id="modalTitle" class="text-base font-bold text-[#f2fafb]">Modal</h3>
+        <button data-action="close-modal" class="text-[#90b4bf] hover:text-white p-1 rounded-lg hover:bg-[#162e36] text-xl font-bold">&times;</button>
       </div>
       <div id="modalBody"></div>
     </div>
   </div>
 
   <!-- Footer -->
-  <footer class="bg-slate-950 border-t border-slate-900 py-4 text-center text-xs text-slate-600 no-print">
-    CareTrack v1.0.00 · Cero Débitos en Obras Sociales · Sello Criptográfico SHA-256 · AiAppFactory
+  <footer class="bg-[#081013] border-t border-[#13262c] py-4 text-center text-xs text-[#7195a1] no-print">
+    CareTrack v1.0.01 · Cero Débitos en Obras Sociales · Sello Criptográfico SHA-256 · AiAppFactory
   </footer>
 
   <script type="module" src="./src/main.js"></script>

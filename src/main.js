@@ -242,7 +242,7 @@ export class CareTrackApp {
       btn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white flex items-center gap-1.5 shadow-md';
       btn.textContent = '☀️ Pantalla Activa: ON';
     } else {
-      btn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center gap-1.5 border border-slate-700';
+      btn.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-[#d5e7ec] flex items-center gap-1.5 border border-[#264b57]';
       btn.textContent = '🌙 Modo Conducción: OFF';
     }
   }
@@ -256,7 +256,7 @@ export class CareTrackApp {
       success: 'bg-emerald-600 text-white',
       error: 'bg-rose-600 text-white',
       warning: 'bg-amber-600 text-white',
-      info: 'bg-indigo-600 text-white'
+      info: 'bg-[#0d9488] text-white'
     };
 
     toast.className = `p-3 rounded-xl shadow-xl text-sm font-medium flex items-center gap-2 transform transition-all duration-300 translate-y-2 ${colors[type] || colors.info}`;
@@ -295,9 +295,9 @@ export class CareTrackApp {
     this.currentTab = tab;
     document.querySelectorAll('[data-tab]').forEach(el => {
       if (el.getAttribute('data-tab') === tab) {
-        el.className = 'px-4 py-2 rounded-xl text-sm font-semibold bg-indigo-600 text-white shadow-lg shadow-indigo-600/30 flex items-center gap-2';
+        el.className = 'px-4 py-2 rounded-xl text-sm font-semibold bg-[#0d9488] text-white shadow-lg shadow-none flex items-center gap-2';
       } else {
-        el.className = 'px-4 py-2 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800 text-slate-400 hover:text-slate-200 border border-slate-800/80 flex items-center gap-2 transition-colors';
+        el.className = 'px-4 py-2 rounded-xl text-sm font-semibold bg-[#101f24]/60 hover:bg-slate-800 text-[#90b4bf] hover:text-slate-200 border border-[#1d3a44] flex items-center gap-2 transition-colors';
       }
     });
     this.render();
@@ -370,27 +370,27 @@ export class CareTrackApp {
           <strong>Protocolo de Contingencia Vital:</strong> Esta acción emite una alerta roja y despacha la orden inmediata para recambio mano a mano (Swap) con tiempo límite de 2 horas.
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Equipo Averiado en Domicilio</label>
-          <select id="emgEquipmentSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-rose-500" required>
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Equipo Averiado en Domicilio</label>
+          <select id="emgEquipmentSelect" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-rose-500" required>
             ${equipmentOptions || '<option value="">No hay equipos asignados actualmente</option>'}
           </select>
         </div>
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Descripción de la Falla o Alarma</label>
-          <textarea id="emgIssueDesc" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-rose-500" placeholder="Ej: Concentrador emite alarma sonora constante de baja presión de O2 y satura al 86%." required></textarea>
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Descripción de la Falla o Alarma</label>
+          <textarea id="emgIssueDesc" rows="3" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-rose-500" placeholder="Ej: Concentrador emite alarma sonora constante de baja presión de O2 y satura al 86%." required></textarea>
         </div>
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Nombre de Quien Reporta</label>
-            <input type="text" id="emgReporterName" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="Familiar de Guardia" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Nombre de Quien Reporta</label>
+            <input type="text" id="emgReporterName" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="Familiar de Guardia" required />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Teléfono Móvil</label>
-            <input type="tel" id="emgReporterPhone" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="+5491144556677" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Teléfono Móvil</label>
+            <input type="tel" id="emgReporterPhone" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="+5491144556677" required />
           </div>
         </div>
-        <div class="flex justify-end gap-3 pt-3 border-t border-slate-800">
-          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Cancelar</button>
+        <div class="flex justify-end gap-3 pt-3 border-t border-[#1d3a44]">
+          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-[#d5e7ec] hover:bg-slate-700">Cancelar</button>
           <button type="button" data-action="dispatch-emergency-swap" class="px-4 py-2 rounded-xl text-xs font-semibold bg-rose-600 hover:bg-rose-500 text-white shadow-lg shadow-rose-600/30">Despachar Guardia Biomédica</button>
         </div>
       </form>
@@ -453,38 +453,38 @@ export class CareTrackApp {
 
     const html = `
       <div class="space-y-4">
-        <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-xs space-y-1">
-          <div><strong class="text-slate-300">Paciente:</strong> ${Sanitizer.escapeHTML(order.patientName)}</div>
-          <div><strong class="text-slate-300">Dirección:</strong> ${Sanitizer.escapeHTML(order.patientAddress)}</div>
-          <div><strong class="text-slate-300">Equipo Averiado:</strong> ${Sanitizer.escapeHTML(order.equipmentType)} (S/N: ${order.failingEquipmentSerial})</div>
-          <div><strong class="text-slate-300">Falla:</strong> ${Sanitizer.escapeHTML(order.issueDescription)}</div>
+        <div class="bg-[#101f24] p-3 rounded-xl border border-[#1d3a44] text-xs space-y-1">
+          <div><strong class="text-[#d5e7ec]">Paciente:</strong> ${Sanitizer.escapeHTML(order.patientName)}</div>
+          <div><strong class="text-[#d5e7ec]">Dirección:</strong> ${Sanitizer.escapeHTML(order.patientAddress)}</div>
+          <div><strong class="text-[#d5e7ec]">Equipo Averiado:</strong> ${Sanitizer.escapeHTML(order.equipmentType)} (S/N: ${order.failingEquipmentSerial})</div>
+          <div><strong class="text-[#d5e7ec]">Falla:</strong> ${Sanitizer.escapeHTML(order.issueDescription)}</div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Equipo Operativo Sustituto</label>
-          <select id="swapReplacementSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500">
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Equipo Operativo Sustituto</label>
+          <select id="swapReplacementSelect" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-indigo-500">
             ${replacementOptions || '<option value="">No hay sustitutos en stock</option>'}
           </select>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Diagnóstico Técnico en Domicilio</label>
-          <input type="text" id="swapTechNotes" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="Equipo con falla en válvula reguladora. Se retira para taller y se entrega unidad calibrada." />
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Diagnóstico Técnico en Domicilio</label>
+          <input type="text" id="swapTechNotes" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="Equipo con falla en válvula reguladora. Se retira para taller y se entrega unidad calibrada." />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Firma Digital del Familiar (Recepción Conforme)</label>
-          <div class="border border-slate-700 bg-slate-950 rounded-xl p-2">
-            <canvas id="swapSignatureCanvas" width="450" height="120" class="w-full bg-slate-900/50 rounded-lg cursor-crosshair touch-none"></canvas>
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Firma Digital del Familiar (Recepción Conforme)</label>
+          <div class="border border-[#264b57] bg-[#0c161a] rounded-xl p-2">
+            <canvas id="swapSignatureCanvas" width="450" height="120" class="w-full bg-[#101f24]/50 rounded-lg cursor-crosshair touch-none"></canvas>
             <div class="flex justify-between items-center mt-1">
-              <span class="text-[10px] text-slate-500">Dibuje la firma táctil con el dedo o puntero</span>
-              <button type="button" data-action="clear-signature" class="text-[10px] text-indigo-400 hover:underline">Limpiar firma</button>
+              <span class="text-[10px] text-[#6d919c]">Dibuje la firma táctil con el dedo o puntero</span>
+              <button type="button" data-action="clear-signature" class="text-[10px] text-[#2dd4bf] hover:underline">Limpiar firma</button>
             </div>
           </div>
         </div>
 
-        <div class="flex justify-end gap-3 pt-3 border-t border-slate-800">
-          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Cancelar</button>
+        <div class="flex justify-end gap-3 pt-3 border-t border-[#1d3a44]">
+          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-[#d5e7ec] hover:bg-slate-700">Cancelar</button>
           <button type="button" data-action="confirm-swap-resolution" data-id="${order.id}" class="px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-600/30">Certificar Recambio y Cerrar Orden</button>
         </div>
       </div>
@@ -538,19 +538,19 @@ export class CareTrackApp {
       <form id="newPatientForm" class="space-y-3">
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Nombre Completo</label>
-            <input type="text" id="npFullName" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: Beatriz Elena Castro" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Nombre Completo</label>
+            <input type="text" id="npFullName" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: Beatriz Elena Castro" required />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">DNI</label>
-            <input type="text" id="npDni" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: 14223940" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">DNI</label>
+            <input type="text" id="npDni" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: 14223940" required />
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Obra Social / Prepaga</label>
-            <select id="npObraSocial" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200">
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Obra Social / Prepaga</label>
+            <select id="npObraSocial" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200">
               <option value="PAMI (Instituto)">PAMI (Instituto)</option>
               <option value="OSDE">OSDE</option>
               <option value="Swiss Medical">Swiss Medical</option>
@@ -560,39 +560,39 @@ export class CareTrackApp {
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">N° de Afiliado</label>
-            <input type="text" id="npAffiliateNum" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: 120-9481920-00" />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">N° de Afiliado</label>
+            <input type="text" id="npAffiliateNum" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: 120-9481920-00" />
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Dirección del Domicilio</label>
-          <input type="text" id="npAddress" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: Av. Santa Fe 2100, CABA" required />
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Dirección del Domicilio</label>
+          <input type="text" id="npAddress" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: Av. Santa Fe 2100, CABA" required />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-400 mb-1">Diagnóstico Clínico (CIE-10)</label>
-          <input type="text" id="npDiagnosis" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: J44.9 - EPOC en oxigenoterapia domiciliaria" required />
+          <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Diagnóstico Clínico (CIE-10)</label>
+          <input type="text" id="npDiagnosis" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: J44.9 - EPOC en oxigenoterapia domiciliaria" required />
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Nivel de Complejidad</label>
-            <select id="npCareLevel" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200">
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Nivel de Complejidad</label>
+            <select id="npCareLevel" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200">
               <option value="Baja Complejidad">Baja Complejidad</option>
               <option value="Media Complejidad" selected>Media Complejidad</option>
               <option value="Alta Complejidad">Alta Complejidad (UTI)</option>
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Teléfono Tutor (WhatsApp)</label>
-            <input type="tel" id="npTutorPhone" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="+5491122334455" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Teléfono Tutor (WhatsApp)</label>
+            <input type="tel" id="npTutorPhone" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="+5491122334455" required />
           </div>
         </div>
 
-        <div class="flex justify-end gap-3 pt-3 border-t border-slate-800">
-          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Cancelar</button>
-          <button type="button" data-action="register-patient" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30">Guardar Paciente</button>
+        <div class="flex justify-end gap-3 pt-3 border-t border-[#1d3a44]">
+          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-[#d5e7ec] hover:bg-slate-700">Cancelar</button>
+          <button type="button" data-action="register-patient" class="px-4 py-2 rounded-xl text-xs font-semibold bg-[#0d9488] hover:bg-[#0f766e] text-white shadow-lg shadow-none">Guardar Paciente</button>
         </div>
       </form>
     `;
@@ -664,8 +664,8 @@ export class CareTrackApp {
       <form id="newEqForm" class="space-y-3">
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Tipo de Equipo</label>
-            <select id="neqType" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200">
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Tipo de Equipo</label>
+            <select id="neqType" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200">
               <option value="Concentrador de Oxígeno 5L">Concentrador de Oxígeno 5L</option>
               <option value="Concentrador de Oxígeno 10L">Concentrador de Oxígeno 10L</option>
               <option value="Cama Ortopédica Eléctrica 3 Posiciones">Cama Ortopédica Eléctrica 3 Posiciones</option>
@@ -675,36 +675,36 @@ export class CareTrackApp {
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Número de Serie</label>
-            <input type="text" id="neqSerial" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: OXG-9901-AR" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Número de Serie</label>
+            <input type="text" id="neqSerial" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: OXG-9901-AR" required />
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Marca</label>
-            <input type="text" id="neqBrand" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: Philips Respironics" required />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Marca</label>
+            <input type="text" id="neqBrand" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: Philips Respironics" required />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Modelo</label>
-            <input type="text" id="neqModel" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: EverFlo 2026" />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Modelo</label>
+            <input type="text" id="neqModel" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" placeholder="Ej: EverFlo 2026" />
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Horas de Uso Acumuladas</label>
-            <input type="number" id="neqHours" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="0" />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Horas de Uso Acumuladas</label>
+            <input type="number" id="neqHours" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="0" />
           </div>
           <div>
-            <label class="block text-xs font-semibold text-slate-400 mb-1">Abono Comodato Mensual (ARS)</label>
-            <input type="number" id="neqFee" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="95000" />
+            <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Abono Comodato Mensual (ARS)</label>
+            <input type="number" id="neqFee" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="95000" />
           </div>
         </div>
 
-        <div class="flex justify-end gap-3 pt-3 border-t border-slate-800">
-          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700">Cancelar</button>
-          <button type="button" data-action="register-equipment" class="px-4 py-2 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30">Guardar Equipo</button>
+        <div class="flex justify-end gap-3 pt-3 border-t border-[#1d3a44]">
+          <button type="button" data-action="close-modal" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 text-[#d5e7ec] hover:bg-slate-700">Cancelar</button>
+          <button type="button" data-action="register-equipment" class="px-4 py-2 rounded-xl text-xs font-semibold bg-[#0d9488] hover:bg-[#0f766e] text-white shadow-lg shadow-none">Guardar Equipo</button>
         </div>
       </form>
     `;
@@ -807,7 +807,7 @@ export class CareTrackApp {
           <div class="text-indigo-200">
             <strong>Código OTP Generado:</strong> <span class="text-lg font-mono font-bold text-amber-300 ml-2 tracking-widest">${otp.token}</span>
           </div>
-          <div class="text-slate-400">
+          <div class="text-[#90b4bf]">
             Enviado a: ${Sanitizer.escapeHTML(patient.tutor.fullName)} (${patient.tutor.phone})
           </div>
           <a href="${Sanitizer.sanitizeURL(waUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs">
@@ -1020,63 +1020,63 @@ export class CareTrackApp {
       <div class="space-y-6">
         <!-- Top Metrics -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-xl">
-            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Pacientes en Domicilio</div>
+          <div class="bg-[#101f24] p-5 rounded-xl border border-[#1d3a44] shadow-xl">
+            <div class="text-xs font-semibold text-[#90b4bf] uppercase tracking-wider">Pacientes en Domicilio</div>
             <div class="text-3xl font-extrabold text-white mt-2">${activePatients.length}</div>
-            <div class="text-xs text-indigo-400 mt-1">${patients.length} historial total</div>
+            <div class="text-xs text-[#2dd4bf] mt-1">${patients.length} historial total</div>
           </div>
 
-          <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-xl">
-            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Equipos en Comodato</div>
-            <div class="text-3xl font-extrabold text-white mt-2">${assignedEq.length} <span class="text-sm font-normal text-slate-400">/ ${allEq.length} total</span></div>
+          <div class="bg-[#101f24] p-5 rounded-xl border border-[#1d3a44] shadow-xl">
+            <div class="text-xs font-semibold text-[#90b4bf] uppercase tracking-wider">Equipos en Comodato</div>
+            <div class="text-3xl font-extrabold text-white mt-2">${assignedEq.length} <span class="text-sm font-normal text-[#90b4bf]">/ ${allEq.length} total</span></div>
             <div class="text-xs text-emerald-400 mt-1">${formatARS(totalComodatoValue)} / mes</div>
           </div>
 
-          <div class="bg-slate-900/80 p-5 rounded-2xl border border-slate-800 shadow-xl">
-            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Visitas Certificadas</div>
+          <div class="bg-[#101f24] p-5 rounded-xl border border-[#1d3a44] shadow-xl">
+            <div class="text-xs font-semibold text-[#90b4bf] uppercase tracking-wider">Visitas Certificadas</div>
             <div class="text-3xl font-extrabold text-emerald-400 mt-2">${visits.length}</div>
-            <div class="text-xs text-slate-400 mt-1">100% Sello SHA-256 Cero Débito</div>
+            <div class="text-xs text-[#90b4bf] mt-1">100% Sello SHA-256 Cero Débito</div>
           </div>
 
-          <div class="bg-slate-900/80 p-5 rounded-2xl border border-rose-900/40 shadow-xl">
+          <div class="bg-[#101f24] p-5 rounded-xl border border-rose-900/40 shadow-xl">
             <div class="text-xs font-semibold text-rose-400 uppercase tracking-wider">Emergencias Biomédicas</div>
             <div class="text-3xl font-extrabold text-rose-400 mt-2">${openOrders.length}</div>
-            <div class="text-xs text-slate-400 mt-1">SLA Objetivo &lt; 120 min</div>
+            <div class="text-xs text-[#90b4bf] mt-1">SLA Objetivo &lt; 120 min</div>
           </div>
         </div>
 
         <!-- Action Banners -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="bg-gradient-to-r from-rose-950/50 to-slate-900 p-5 rounded-2xl border border-rose-800/40 flex items-center justify-between">
+          <div class="bg-gradient-to-r from-rose-950/50 to-slate-900 p-5 rounded-xl border border-rose-800/40 flex items-center justify-between">
             <div>
               <h3 class="text-base font-bold text-white flex items-center gap-2">
                 <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
                 Botón de Emergencia Biomédica 24/7
               </h3>
-              <p class="text-xs text-slate-300 mt-1">Falla crítica de concentrador o soporte vital. Despacho Swap en &lt; 2hs.</p>
+              <p class="text-xs text-[#d5e7ec] mt-1">Falla crítica de concentrador o soporte vital. Despacho Swap en &lt; 2hs.</p>
             </div>
             <button data-action="open-emergency-modal" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow-lg shadow-rose-600/30 whitespace-nowrap">
               Despachar Swap
             </button>
           </div>
 
-          <div class="bg-gradient-to-r from-indigo-950/50 to-slate-900 p-5 rounded-2xl border border-indigo-800/40 flex items-center justify-between">
+          <div class="bg-gradient-to-r from-indigo-950/50 to-slate-900 p-5 rounded-xl border border-[#14b8a6]/40/40 flex items-center justify-between">
             <div>
               <h3 class="text-base font-bold text-white">Certificación Antifraude de Visita</h3>
-              <p class="text-xs text-slate-300 mt-1">Geocerca &lt;60m + Firma digital táctil o Token OTP WhatsApp.</p>
+              <p class="text-xs text-[#d5e7ec] mt-1">Geocerca &lt;60m + Firma digital táctil o Token OTP WhatsApp.</p>
             </div>
-            <button data-tab="visits" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30 whitespace-nowrap">
+            <button data-tab="visits" class="px-4 py-2.5 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold text-xs shadow-lg shadow-none whitespace-nowrap">
               Iniciar Atención
             </button>
           </div>
         </div>
 
         <!-- Recent Activity Table -->
-        <div class="bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl">
+        <div class="bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl">
           <h3 class="text-sm font-bold text-white mb-4">Últimas Prestaciones Domiciliarias Certificadas</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs">
-              <thead class="text-slate-400 border-b border-slate-800 uppercase text-[10px] tracking-wider">
+              <thead class="text-[#90b4bf] border-b border-[#1d3a44] uppercase text-[10px] tracking-wider">
                 <tr>
                   <th class="pb-3">ID Visita</th>
                   <th class="pb-3">Paciente</th>
@@ -1087,20 +1087,20 @@ export class CareTrackApp {
                   <th class="pb-3">Importe</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-slate-800/60 text-slate-300">
-                ${visits.length === 0 ? '<tr><td colspan="7" class="py-4 text-center text-slate-500">No hay visitas completadas aún</td></tr>' : ''}
+              <tbody class="divide-y divide-slate-800/60 text-[#d5e7ec]">
+                ${visits.length === 0 ? '<tr><td colspan="7" class="py-4 text-center text-[#6d919c]">No hay visitas completadas aún</td></tr>' : ''}
                 ${visits.map(v => `
                   <tr>
-                    <td class="py-3 font-mono font-semibold text-indigo-400">${v.id}</td>
+                    <td class="py-3 font-mono font-semibold text-[#2dd4bf]">${v.id}</td>
                     <td class="py-3 font-medium text-white">${Sanitizer.escapeHTML(v.patientName)}</td>
                     <td class="py-3">${Sanitizer.escapeHTML(v.specialty)}</td>
                     <td class="py-3">
-                      <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${v.vitalsEvaluation?.severity === 'critical' ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-emerald-950 text-emerald-300 border border-emerald-800'}">
+                      <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${v.vitalsEvaluation?.severity === 'critical' ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-[#0f2d24] text-emerald-300 border border-[#1b5e4b]'}">
                         ${v.vitals ? `TA: ${v.vitals.systolic}/${v.vitals.diastolic} | SatO2: ${v.vitals.oxygenSat}%` : 'Estables'}
                       </span>
                     </td>
                     <td class="py-3">
-                      <span class="px-2 py-0.5 rounded-md text-[10px] bg-slate-800 text-slate-300">
+                      <span class="px-2 py-0.5 rounded-md text-[10px] bg-slate-800 text-[#d5e7ec]">
                         ${v.verificationMode === 'tactile_signature' ? '✍️ Firma en Pantalla' : '🔑 OTP WhatsApp'}
                       </span>
                     </td>
@@ -1128,9 +1128,9 @@ export class CareTrackApp {
         <div class="flex justify-between items-center">
           <div>
             <h2 class="text-lg font-bold text-white">Registro de Pacientes en Domicilio</h2>
-            <p class="text-xs text-slate-400">Historias clínicas, coordenadas de geocerca y tutores legales.</p>
+            <p class="text-xs text-[#90b4bf]">Historias clínicas, coordenadas de geocerca y tutores legales.</p>
           </div>
-          <button data-action="open-patient-modal" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30 flex items-center gap-1.5">
+          <button data-action="open-patient-modal" class="px-4 py-2 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold text-xs shadow-lg shadow-none flex items-center gap-1.5">
             + Nuevo Paciente
           </button>
         </div>
@@ -1139,54 +1139,54 @@ export class CareTrackApp {
           ${patients.map(p => {
             const assigned = this.equipmentCatalog.listEquipment({ patientId: p.id });
             return `
-              <div class="bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl flex flex-col justify-between">
+              <div class="bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl flex flex-col justify-between">
                 <div>
                   <div class="flex justify-between items-start">
                     <div>
-                      <span class="text-[10px] font-mono text-indigo-400">${p.id}</span>
+                      <span class="text-[10px] font-mono text-[#2dd4bf]">${p.id}</span>
                       <h3 class="text-base font-bold text-white">${Sanitizer.escapeHTML(p.fullName)}</h3>
-                      <div class="text-xs text-slate-400">DNI: ${Sanitizer.escapeHTML(p.dni)}</div>
+                      <div class="text-xs text-[#90b4bf]">DNI: ${Sanitizer.escapeHTML(p.dni)}</div>
                     </div>
-                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${p.status === 'active' ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-slate-800 text-slate-400'}">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${p.status === 'active' ? 'bg-[#0f2d24] text-emerald-300 border border-[#1b5e4b]' : 'bg-slate-800 text-[#90b4bf]'}">
                       ${p.status === 'active' ? 'En Domicilio' : 'Alta Médica'}
                     </span>
                   </div>
 
                   <div class="mt-4 space-y-2 text-xs">
-                    <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80">
-                      <div class="text-[10px] text-slate-500 uppercase font-semibold">Diagnóstico (CIE-10)</div>
-                      <div class="text-slate-300 font-medium">${Sanitizer.escapeHTML(p.diagnosis)}</div>
+                    <div class="bg-[#0c161a] p-2.5 rounded-xl border border-[#1d3a44]">
+                      <div class="text-[10px] text-[#6d919c] uppercase font-semibold">Diagnóstico (CIE-10)</div>
+                      <div class="text-[#d5e7ec] font-medium">${Sanitizer.escapeHTML(p.diagnosis)}</div>
                     </div>
 
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Obra Social:</span>
                       <span class="font-medium text-slate-200">${Sanitizer.escapeHTML(p.obraSocial)}</span>
                     </div>
 
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Dirección:</span>
                       <span class="font-medium text-slate-200 truncate max-w-[180px]">${Sanitizer.escapeHTML(p.address)}</span>
                     </div>
 
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Tutor Legal:</span>
-                      <span class="font-medium text-indigo-300">${Sanitizer.escapeHTML(p.tutor.fullName)}</span>
+                      <span class="font-medium text-[#5eead4]">${Sanitizer.escapeHTML(p.tutor.fullName)}</span>
                     </div>
 
-                    <div class="pt-2 border-t border-slate-800">
-                      <div class="text-[10px] text-slate-500 uppercase font-semibold mb-1">Equipamiento en Comodato</div>
-                      ${assigned.length === 0 ? '<div class="text-slate-500 italic">Sin equipos asignados</div>' : ''}
+                    <div class="pt-2 border-t border-[#1d3a44]">
+                      <div class="text-[10px] text-[#6d919c] uppercase font-semibold mb-1">Equipamiento en Comodato</div>
+                      ${assigned.length === 0 ? '<div class="text-[#6d919c] italic">Sin equipos asignados</div>' : ''}
                       ${assigned.map(e => `
-                        <div class="text-slate-300 flex items-center justify-between text-[11px] bg-slate-900 p-1.5 rounded-lg mb-1">
+                        <div class="text-[#d5e7ec] flex items-center justify-between text-[11px] bg-[#101f24] p-1.5 rounded-lg mb-1">
                           <span>📦 ${Sanitizer.escapeHTML(e.type)}</span>
-                          <span class="font-mono text-slate-400">${e.serialNumber}</span>
+                          <span class="font-mono text-[#90b4bf]">${e.serialNumber}</span>
                         </div>
                       `).join('')}
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex justify-between items-center">
+                <div class="mt-4 pt-3 border-t border-[#1d3a44] flex justify-between items-center">
                   <a href="${Sanitizer.sanitizeURL(WhatsAppCareNotifier.cleanPhoneNumber(p.tutor.phone) ? 'https://wa.me/' + WhatsAppCareNotifier.cleanPhoneNumber(p.tutor.phone) : '#')}" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-400 hover:underline flex items-center gap-1">
                     💬 WhatsApp Tutor
                   </a>
@@ -1214,9 +1214,9 @@ export class CareTrackApp {
         <div class="flex justify-between items-center">
           <div>
             <h2 class="text-lg font-bold text-white">Equipamiento Biomédico en Comodato</h2>
-            <p class="text-xs text-slate-400">Concentradores de O2, camas eléctricas, bombas y scoring de calibración.</p>
+            <p class="text-xs text-[#90b4bf]">Concentradores de O2, camas eléctricas, bombas y scoring de calibración.</p>
           </div>
-          <button data-action="open-equipment-modal" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30 flex items-center gap-1.5">
+          <button data-action="open-equipment-modal" class="px-4 py-2 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold text-xs shadow-lg shadow-none flex items-center gap-1.5">
             + Ingresar Equipo
           </button>
         </div>
@@ -1227,17 +1227,17 @@ export class CareTrackApp {
             const healthColor = e.healthScore >= 80 ? 'bg-emerald-500' : e.healthScore >= 50 ? 'bg-amber-500' : 'bg-rose-500';
 
             return `
-              <div class="bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl flex flex-col justify-between">
+              <div class="bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl flex flex-col justify-between">
                 <div>
                   <div class="flex justify-between items-start">
                     <div>
-                      <span class="text-[10px] font-mono text-indigo-400">${e.id}</span>
+                      <span class="text-[10px] font-mono text-[#2dd4bf]">${e.id}</span>
                       <h3 class="text-base font-bold text-white">${Sanitizer.escapeHTML(e.type)}</h3>
-                      <div class="text-xs font-mono text-slate-300">S/N: ${Sanitizer.escapeHTML(e.serialNumber)}</div>
+                      <div class="text-xs font-mono text-[#d5e7ec]">S/N: ${Sanitizer.escapeHTML(e.serialNumber)}</div>
                     </div>
                     <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${
-                      e.status === 'assigned' ? 'bg-indigo-950 text-indigo-300 border border-indigo-800' :
-                      e.status === 'in_warehouse' ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' :
+                      e.status === 'assigned' ? 'bg-indigo-950 text-[#5eead4] border border-[#14b8a6]/40' :
+                      e.status === 'in_warehouse' ? 'bg-[#0f2d24] text-emerald-300 border border-[#1b5e4b]' :
                       'bg-rose-950 text-rose-300 border border-rose-800'
                     }">
                       ${e.status === 'assigned' ? 'Asignado' : e.status === 'in_warehouse' ? 'En Depósito' : 'Mantenimiento'}
@@ -1247,7 +1247,7 @@ export class CareTrackApp {
                   <!-- Health Score Bar -->
                   <div class="mt-4">
                     <div class="flex justify-between text-xs mb-1">
-                      <span class="text-slate-400">Índice de Salud Biomédica:</span>
+                      <span class="text-[#90b4bf]">Índice de Salud Biomédica:</span>
                       <span class="font-bold text-white">${e.healthScore}/100</span>
                     </div>
                     <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
@@ -1256,35 +1256,35 @@ export class CareTrackApp {
                   </div>
 
                   <div class="mt-4 space-y-2 text-xs">
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Marca y Modelo:</span>
                       <span class="font-medium text-slate-200">${Sanitizer.escapeHTML(e.brand)} ${Sanitizer.escapeHTML(e.model)}</span>
                     </div>
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Horas de Uso:</span>
                       <span class="font-medium text-slate-200">${e.hoursOfUse} hs</span>
                     </div>
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Abono Mensual:</span>
                       <span class="font-bold text-emerald-400">${formatARS(e.monthlyComodatoFee)}</span>
                     </div>
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Próxima Calibración:</span>
                       <span class="font-medium text-slate-200">${formatDate(e.nextMaintenanceDate)}</span>
                     </div>
 
                     ${pat ? `
-                      <div class="bg-indigo-950/30 p-2.5 rounded-xl border border-indigo-800/40 mt-2">
-                        <div class="text-[10px] text-indigo-300 font-semibold uppercase">Instalado en Domicilio de:</div>
+                      <div class="bg-indigo-950/30 p-2.5 rounded-xl border border-[#14b8a6]/40/40 mt-2">
+                        <div class="text-[10px] text-[#5eead4] font-semibold uppercase">Instalado en Domicilio de:</div>
                         <div class="font-bold text-white text-xs mt-0.5">${Sanitizer.escapeHTML(pat.fullName)}</div>
-                        <div class="text-[11px] text-slate-400 truncate">${Sanitizer.escapeHTML(pat.address)}</div>
+                        <div class="text-[11px] text-[#90b4bf] truncate">${Sanitizer.escapeHTML(pat.address)}</div>
                       </div>
                     ` : ''}
                   </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center text-xs">
-                  <span class="text-slate-500">${e.assignedAt ? `Instalado el ${formatDate(e.assignedAt)}` : 'Disponible'}</span>
+                <div class="mt-4 pt-3 border-t border-[#1d3a44] flex justify-between items-center text-xs">
+                  <span class="text-[#6d919c]">${e.assignedAt ? `Instalado el ${formatDate(e.assignedAt)}` : 'Disponible'}</span>
                   ${e.status === 'assigned' ? `
                     <button data-action="open-emergency-modal" class="text-rose-400 hover:text-rose-300 font-semibold flex items-center gap-1">
                       🚨 Reportar Falla
@@ -1309,91 +1309,91 @@ export class CareTrackApp {
       <div class="space-y-6">
         <div>
           <h2 class="text-lg font-bold text-white">Certificación Antifraude de Visita Médica</h2>
-          <p class="text-xs text-slate-400">Control estricto de geocerca GPS (&lt;60m) + Sello criptográfico SHA-256 para evitar débitos de obras sociales.</p>
+          <p class="text-xs text-[#90b4bf]">Control estricto de geocerca GPS (&lt;60m) + Sello criptográfico SHA-256 para evitar débitos de obras sociales.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <!-- Visit Check-in & Form -->
-          <div class="lg:col-span-2 bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl space-y-4">
-            <h3 class="text-sm font-bold text-white border-b border-slate-800 pb-3 flex items-center justify-between">
+          <div class="lg:col-span-2 bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl space-y-4">
+            <h3 class="text-sm font-bold text-white border-b border-[#1d3a44] pb-3 flex items-center justify-between">
               <span>Registro de Atención en Domicilio</span>
-              ${this.activeVisitCheckin ? '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-950 text-emerald-300 border border-emerald-800">Check-in Activo</span>' : ''}
+              ${this.activeVisitCheckin ? '<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#0f2d24] text-emerald-300 border border-[#1b5e4b]">Check-in Activo</span>' : ''}
             </h3>
 
             ${!this.activeVisitCheckin ? `
               <div class="space-y-3">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Paciente en Domicilio</label>
-                    <select id="visitPatientSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200">
+                    <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Paciente en Domicilio</label>
+                    <select id="visitPatientSelect" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200">
                       ${patients.map(p => `<option value="${p.id}">${Sanitizer.escapeHTML(p.fullName)} - ${Sanitizer.escapeHTML(p.obraSocial)}</option>`).join('')}
                     </select>
                   </div>
                   <div>
-                    <label class="block text-xs font-semibold text-slate-400 mb-1">Especialidad de la Prestación</label>
-                    <select id="visitSpecialtySelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200">
+                    <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Especialidad de la Prestación</label>
+                    <select id="visitSpecialtySelect" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200">
                       ${Object.keys(PROFESSIONAL_FEES).map(s => `<option value="${s}">${s} (${formatARS(PROFESSIONAL_FEES[s])})</option>`).join('')}
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Nombre del Profesional de Guardia</label>
-                  <input type="text" id="visitProfNameInput" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="Lic. Laura Benítez" />
+                  <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Nombre del Profesional de Guardia</label>
+                  <input type="text" id="visitProfNameInput" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="Lic. Laura Benítez" />
                 </div>
 
-                <div class="bg-indigo-950/40 p-3 rounded-xl border border-indigo-800/40 text-xs text-indigo-200">
+                <div class="bg-indigo-950/40 p-3 rounded-xl border border-[#14b8a6]/40/40 text-xs text-indigo-200">
                   📍 <strong>Verificación GPS:</strong> Al presionar "Iniciar Check-in", el sistema verificará que la distancia al domicilio declarado sea menor a 60 metros.
                 </div>
 
-                <button data-action="start-checkin" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30">
+                <button data-action="start-checkin" class="w-full py-2.5 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold text-xs shadow-lg shadow-none">
                   📍 Iniciar Check-in con Geocerca GPS
                 </button>
               </div>
             ` : `
               <div class="space-y-4">
-                <div class="bg-emerald-950/40 border border-emerald-800/60 p-3 rounded-xl text-xs space-y-1">
+                <div class="bg-[#0f2d24] border border-[#1b5e4b] p-3 rounded-xl text-xs space-y-1">
                   <div class="text-emerald-300 font-bold">Check-in GPS Verificado: ${this.activeVisitCheckin.checkInLocation.distanceMeters} metros del domicilio</div>
-                  <div class="text-slate-300">Paciente: <strong>${Sanitizer.escapeHTML(this.activeVisitCheckin.patientName)}</strong> | ${Sanitizer.escapeHTML(this.activeVisitCheckin.specialty)}</div>
+                  <div class="text-[#d5e7ec]">Paciente: <strong>${Sanitizer.escapeHTML(this.activeVisitCheckin.patientName)}</strong> | ${Sanitizer.escapeHTML(this.activeVisitCheckin.specialty)}</div>
                 </div>
 
                 <!-- Signos Vitales -->
                 <div>
-                  <h4 class="text-xs font-bold text-slate-300 mb-2 uppercase tracking-wider">Control de Signos Vitales</h4>
+                  <h4 class="text-xs font-bold text-[#d5e7ec] mb-2 uppercase tracking-wider">Control de Signos Vitales</h4>
                   <div class="grid grid-cols-5 gap-2">
                     <div>
-                      <label class="block text-[10px] text-slate-400">TA Sis</label>
-                      <input type="number" id="vitSys" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white" value="125" />
+                      <label class="block text-[10px] text-[#90b4bf]">TA Sis</label>
+                      <input type="number" id="vitSys" class="w-full bg-[#101f24] border border-[#264b57] rounded-lg p-1.5 text-xs text-white" value="125" />
                     </div>
                     <div>
-                      <label class="block text-[10px] text-slate-400">TA Dia</label>
-                      <input type="number" id="vitDia" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white" value="80" />
+                      <label class="block text-[10px] text-[#90b4bf]">TA Dia</label>
+                      <input type="number" id="vitDia" class="w-full bg-[#101f24] border border-[#264b57] rounded-lg p-1.5 text-xs text-white" value="80" />
                     </div>
                     <div>
-                      <label class="block text-[10px] text-slate-400">SatO2 (%)</label>
-                      <input type="number" id="vitO2" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white" value="97" />
+                      <label class="block text-[10px] text-[#90b4bf]">SatO2 (%)</label>
+                      <input type="number" id="vitO2" class="w-full bg-[#101f24] border border-[#264b57] rounded-lg p-1.5 text-xs text-white" value="97" />
                     </div>
                     <div>
-                      <label class="block text-[10px] text-slate-400">FC (lpm)</label>
-                      <input type="number" id="vitHr" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white" value="72" />
+                      <label class="block text-[10px] text-[#90b4bf]">FC (lpm)</label>
+                      <input type="number" id="vitHr" class="w-full bg-[#101f24] border border-[#264b57] rounded-lg p-1.5 text-xs text-white" value="72" />
                     </div>
                     <div>
-                      <label class="block text-[10px] text-slate-400">Temp (°C)</label>
-                      <input type="number" id="vitTemp" step="0.1" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-1.5 text-xs text-white" value="36.5" />
+                      <label class="block text-[10px] text-[#90b4bf]">Temp (°C)</label>
+                      <input type="number" id="vitTemp" step="0.1" class="w-full bg-[#101f24] border border-[#264b57] rounded-lg p-1.5 text-xs text-white" value="36.5" />
                     </div>
                   </div>
                 </div>
 
                 <!-- Evolución Clínica -->
                 <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Evolución Clínica y Procedimientos Realizados</label>
-                  <textarea id="visitClinicalNote" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200" placeholder="Detalle las maniobras, curaciones, medicación suministrada y estado general del paciente..."></textarea>
+                  <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Evolución Clínica y Procedimientos Realizados</label>
+                  <textarea id="visitClinicalNote" rows="3" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-xs text-slate-200" placeholder="Detalle las maniobras, curaciones, medicación suministrada y estado general del paciente..."></textarea>
                 </div>
 
                 <!-- Modo de Validación -->
                 <div>
-                  <label class="block text-xs font-semibold text-slate-400 mb-1">Mecanismo de Consentimiento y Firma</label>
-                  <select id="verificationModeSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200">
+                  <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Mecanismo de Consentimiento y Firma</label>
+                  <select id="verificationModeSelect" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-xs text-slate-200">
                     <option value="tactile_signature">Firma Táctil Digital del Familiar en Pantalla</option>
                     <option value="whatsapp_otp">Token OTP por WhatsApp (Paciente Solo / Tutor a Distancia)</option>
                   </select>
@@ -1401,12 +1401,12 @@ export class CareTrackApp {
 
                 <!-- Area Firma Táctil -->
                 <div id="tactileSignatureArea" class="space-y-1">
-                  <label class="block text-xs text-slate-400">Firma del Familiar o Acompañante:</label>
-                  <div class="border border-slate-700 bg-slate-950 rounded-xl p-2">
-                    <canvas id="visitSignatureCanvas" width="450" height="100" class="w-full bg-slate-900/50 rounded-lg cursor-crosshair touch-none"></canvas>
+                  <label class="block text-xs text-[#90b4bf]">Firma del Familiar o Acompañante:</label>
+                  <div class="border border-[#264b57] bg-[#0c161a] rounded-xl p-2">
+                    <canvas id="visitSignatureCanvas" width="450" height="100" class="w-full bg-[#101f24]/50 rounded-lg cursor-crosshair touch-none"></canvas>
                     <div class="flex justify-between items-center mt-1">
-                      <span class="text-[10px] text-slate-500">Firmar con el dedo sobre la pantalla</span>
-                      <button type="button" data-action="clear-signature" class="text-[10px] text-indigo-400 hover:underline">Limpiar</button>
+                      <span class="text-[10px] text-[#6d919c]">Firmar con el dedo sobre la pantalla</span>
+                      <button type="button" data-action="clear-signature" class="text-[10px] text-[#2dd4bf] hover:underline">Limpiar</button>
                     </div>
                   </div>
                 </div>
@@ -1418,8 +1418,8 @@ export class CareTrackApp {
                   </button>
                   <div id="otpDisplayArea"></div>
                   <div>
-                    <label class="block text-xs text-slate-400 mb-1">Ingresar Código OTP informado por el Tutor:</label>
-                    <input type="text" id="otpInputCheck" class="w-48 bg-slate-900 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white font-mono tracking-widest text-center" placeholder="6 dígitos" />
+                    <label class="block text-xs text-[#90b4bf] mb-1">Ingresar Código OTP informado por el Tutor:</label>
+                    <input type="text" id="otpInputCheck" class="w-48 bg-[#101f24] border border-[#264b57] rounded-lg px-3 py-1.5 text-xs text-white font-mono tracking-widest text-center" placeholder="6 dígitos" />
                   </div>
                 </div>
 
@@ -1431,28 +1431,28 @@ export class CareTrackApp {
           </div>
 
           <!-- Audit Ledger Summary -->
-          <div class="bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl space-y-4">
-            <h3 class="text-sm font-bold text-white border-b border-slate-800 pb-3">Resguardo Legal y Cero Débitos</h3>
-            <p class="text-xs text-slate-400 leading-relaxed">
+          <div class="bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl space-y-4">
+            <h3 class="text-sm font-bold text-white border-b border-[#1d3a44] pb-3">Resguardo Legal y Cero Débitos</h3>
+            <p class="text-xs text-[#90b4bf] leading-relaxed">
               Las obras sociales (PAMI, OSDE, Swiss Medical) debitan prestaciones cuando las planillas físicas están firmadas en blanco o ilegibles.
             </p>
             <div class="space-y-2.5 text-xs">
-              <div class="flex items-center gap-2 text-slate-300">
+              <div class="flex items-center gap-2 text-[#d5e7ec]">
                 <span class="text-emerald-400 font-bold">✓</span> Georreferenciación Haversine &lt;60 metros
               </div>
-              <div class="flex items-center gap-2 text-slate-300">
+              <div class="flex items-center gap-2 text-[#d5e7ec]">
                 <span class="text-emerald-400 font-bold">✓</span> Firma biométrica o Token OTP WhatsApp
               </div>
-              <div class="flex items-center gap-2 text-slate-300">
+              <div class="flex items-center gap-2 text-[#d5e7ec]">
                 <span class="text-emerald-400 font-bold">✓</span> Registro inmutable de evolución clínica
               </div>
-              <div class="flex items-center gap-2 text-slate-300">
+              <div class="flex items-center gap-2 text-[#d5e7ec]">
                 <span class="text-emerald-400 font-bold">✓</span> Sello criptográfico SHA-256 no repudiable
               </div>
             </div>
 
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-[11px] text-slate-400 space-y-2">
-              <div class="font-bold text-slate-300">Invariante de Integridad:</div>
+            <div class="bg-[#0c161a] p-4 rounded-xl border border-[#1d3a44] text-[11px] text-[#90b4bf] space-y-2">
+              <div class="font-bold text-[#d5e7ec]">Invariante de Integridad:</div>
               <div>Cualquier intento de modificar una visita posterior a su firma altera el hash SHA-256 y la invalida automáticamente para facturación.</div>
             </div>
           </div>
@@ -1475,7 +1475,7 @@ export class CareTrackApp {
         <div class="flex justify-between items-center">
           <div>
             <h2 class="text-lg font-bold text-white">Centro de Emergencias Biomédicas 24/7</h2>
-            <p class="text-xs text-slate-400">Recambio mano a mano (Swap) de equipamiento averiado con SLA menor a 120 minutos.</p>
+            <p class="text-xs text-[#90b4bf]">Recambio mano a mano (Swap) de equipamiento averiado con SLA menor a 120 minutos.</p>
           </div>
           <button data-action="open-emergency-modal" class="px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-xs shadow-lg shadow-rose-600/30 flex items-center gap-1.5">
             🚨 Nueva Alarma Vital
@@ -1483,62 +1483,62 @@ export class CareTrackApp {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          ${orders.length === 0 ? '<div class="col-span-2 py-8 text-center text-slate-500">No hay órdenes de emergencia activas ni registradas</div>' : ''}
+          ${orders.length === 0 ? '<div class="col-span-2 py-8 text-center text-[#6d919c]">No hay órdenes de emergencia activas ni registradas</div>' : ''}
           ${orders.map(o => {
             const sla = this.emergencyService.getSlaStatus(o.id);
             return `
-              <div class="bg-slate-900/80 rounded-2xl border ${o.status === 'completed' ? 'border-slate-800' : 'border-rose-900/60'} p-5 shadow-xl flex flex-col justify-between">
+              <div class="bg-[#101f24] rounded-xl border ${o.status === 'completed' ? 'border-[#1d3a44]' : 'border-rose-900/60'} p-5 shadow-xl flex flex-col justify-between">
                 <div>
                   <div class="flex justify-between items-start">
                     <div>
                       <span class="text-[10px] font-mono text-rose-400">${o.id}</span>
                       <h3 class="text-base font-bold text-white">${Sanitizer.escapeHTML(o.equipmentType)}</h3>
-                      <div class="text-xs text-slate-400">S/N Averiado: <span class="font-mono text-slate-200">${o.failingEquipmentSerial}</span></div>
+                      <div class="text-xs text-[#90b4bf]">S/N Averiado: <span class="font-mono text-slate-200">${o.failingEquipmentSerial}</span></div>
                     </div>
                     <span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${
-                      o.status === 'completed' ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-rose-950 text-rose-300 border border-rose-800 animate-pulse'
+                      o.status === 'completed' ? 'bg-[#0f2d24] text-emerald-300 border border-[#1b5e4b]' : 'bg-rose-950 text-rose-300 border border-rose-800 animate-pulse'
                     }">
                       ${o.status === 'completed' ? 'Swap Finalizado' : 'En Guardia / Tránsito'}
                     </span>
                   </div>
 
                   <div class="mt-4 space-y-2 text-xs">
-                    <div class="bg-slate-950/60 p-2.5 rounded-xl border border-slate-800/80">
-                      <div class="text-[10px] text-slate-500 uppercase font-semibold">Anomalía Reportada</div>
+                    <div class="bg-[#0c161a] p-2.5 rounded-xl border border-[#1d3a44]">
+                      <div class="text-[10px] text-[#6d919c] uppercase font-semibold">Anomalía Reportada</div>
                       <div class="text-rose-200 font-medium">${Sanitizer.escapeHTML(o.issueDescription)}</div>
                     </div>
 
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Paciente:</span>
                       <span class="font-medium text-white">${Sanitizer.escapeHTML(o.patientName)}</span>
                     </div>
 
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Dirección:</span>
                       <span class="font-medium text-slate-200 truncate max-w-[200px]">${Sanitizer.escapeHTML(o.patientAddress)}</span>
                     </div>
 
-                    <div class="flex justify-between text-slate-400">
+                    <div class="flex justify-between text-[#90b4bf]">
                       <span>Técnico de Guardia:</span>
-                      <span class="font-medium text-indigo-300">${Sanitizer.escapeHTML(o.dispatchedTechnician?.name || 'Por asignar')}</span>
+                      <span class="font-medium text-[#5eead4]">${Sanitizer.escapeHTML(o.dispatchedTechnician?.name || 'Por asignar')}</span>
                     </div>
 
-                    <div class="bg-slate-900 p-2 rounded-lg border border-slate-800 flex justify-between items-center text-[11px]">
-                      <span class="text-slate-400">Estado de SLA:</span>
+                    <div class="bg-[#101f24] p-2 rounded-lg border border-[#1d3a44] flex justify-between items-center text-[11px]">
+                      <span class="text-[#90b4bf]">Estado de SLA:</span>
                       <span class="font-bold ${sla.isOverdue ? 'text-rose-400' : 'text-emerald-400'}">${sla.message}</span>
                     </div>
 
                     ${o.status === 'completed' ? `
-                      <div class="bg-emerald-950/30 p-2.5 rounded-xl border border-emerald-800/40 text-[11px] space-y-1">
+                      <div class="bg-[#0f2d24] p-2.5 rounded-xl border border-[#1b5e4b] text-[11px] space-y-1">
                         <div class="text-emerald-300 font-semibold">Equipo Sustituto Entregado: S/N ${o.replacementEquipmentSerial}</div>
-                        <div class="text-slate-400">Turnaround: ${o.turnaroundMinutes} minutos (${o.isWithinSla ? 'Dentro de SLA' : 'Fuera de SLA'})</div>
+                        <div class="text-[#90b4bf]">Turnaround: ${o.turnaroundMinutes} minutos (${o.isWithinSla ? 'Dentro de SLA' : 'Fuera de SLA'})</div>
                         <div class="font-mono text-[9px] text-emerald-400">🔒 Sello: ${o.hashSeal?.slice(0, 16)}...</div>
                       </div>
                     ` : ''}
                   </div>
                 </div>
 
-                <div class="mt-4 pt-3 border-t border-slate-800 flex justify-between items-center">
+                <div class="mt-4 pt-3 border-t border-[#1d3a44] flex justify-between items-center">
                   <a href="${Sanitizer.sanitizeURL(WhatsAppCareNotifier.generateEmergencySwapWhatsAppUrl({
                     technicianPhone: o.dispatchedTechnician?.phone || '+5491155443322',
                     orderId: o.id,
@@ -1574,16 +1574,16 @@ export class CareTrackApp {
       <div class="space-y-6">
         <div>
           <h2 class="text-lg font-bold text-white">Liquidaciones y Lotes de Obras Sociales</h2>
-          <p class="text-xs text-slate-400">Exportación de lotes sin débito para PAMI, OSDE, Swiss Medical y liquidación de honorarios profesionales.</p>
+          <p class="text-xs text-[#90b4bf]">Exportación de lotes sin débito para PAMI, OSDE, Swiss Medical y liquidación de honorarios profesionales.</p>
         </div>
 
         <!-- Batch Generator -->
-        <div class="bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl space-y-4">
-          <h3 class="text-sm font-bold text-white border-b border-slate-800 pb-3">Generar Nuevo Lote para Facturación</h3>
+        <div class="bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl space-y-4">
+          <h3 class="text-sm font-bold text-white border-b border-[#1d3a44] pb-3">Generar Nuevo Lote para Facturación</h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">Obra Social / Prepaga</label>
-              <select id="batchOsSelect" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200">
+              <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Obra Social / Prepaga</label>
+              <select id="batchOsSelect" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200">
                 <option value="PAMI (Instituto)">PAMI (Instituto)</option>
                 <option value="OSDE">OSDE</option>
                 <option value="Swiss Medical">Swiss Medical</option>
@@ -1591,11 +1591,11 @@ export class CareTrackApp {
               </select>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-400 mb-1">Período Mensual (AAAA-MM)</label>
-              <input type="month" id="batchPeriodInput" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-sm text-slate-200" value="${new Date().toISOString().slice(0, 7)}" />
+              <label class="block text-xs font-semibold text-[#90b4bf] mb-1">Período Mensual (AAAA-MM)</label>
+              <input type="month" id="batchPeriodInput" class="w-full bg-[#101f24] border border-[#264b57] rounded-xl px-3 py-2 text-sm text-slate-200" value="${new Date().toISOString().slice(0, 7)}" />
             </div>
             <div class="flex items-end">
-              <button data-action="generate-batch" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs shadow-lg shadow-indigo-600/30">
+              <button data-action="generate-batch" class="w-full py-2.5 rounded-xl bg-[#0d9488] hover:bg-[#0f766e] text-white font-semibold text-xs shadow-lg shadow-none">
                 ⚡ Generar y Auditar Lote
               </button>
             </div>
@@ -1603,11 +1603,11 @@ export class CareTrackApp {
         </div>
 
         <!-- Generated Batches -->
-        <div class="bg-slate-900/80 rounded-2xl border border-slate-800 p-5 shadow-xl space-y-4">
+        <div class="bg-[#101f24] rounded-xl border border-[#1d3a44] p-5 shadow-xl space-y-4">
           <h3 class="text-sm font-bold text-white">Lotes Auditados Listos para Presentación</h3>
           <div class="overflow-x-auto">
             <table class="w-full text-left text-xs">
-              <thead class="text-slate-400 border-b border-slate-800 uppercase text-[10px] tracking-wider">
+              <thead class="text-[#90b4bf] border-b border-[#1d3a44] uppercase text-[10px] tracking-wider">
                 <tr>
                   <th class="pb-3">ID Lote</th>
                   <th class="pb-3">Obra Social</th>
@@ -1619,23 +1619,23 @@ export class CareTrackApp {
                   <th class="pb-3 text-right">Acción</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-slate-800/60 text-slate-300">
-                ${batches.length === 0 ? '<tr><td colspan="8" class="py-4 text-center text-slate-500">No hay lotes generados aún</td></tr>' : ''}
+              <tbody class="divide-y divide-slate-800/60 text-[#d5e7ec]">
+                ${batches.length === 0 ? '<tr><td colspan="8" class="py-4 text-center text-[#6d919c]">No hay lotes generados aún</td></tr>' : ''}
                 ${batches.map(b => `
                   <tr>
-                    <td class="py-3 font-mono font-semibold text-indigo-400">${b.id}</td>
+                    <td class="py-3 font-mono font-semibold text-[#2dd4bf]">${b.id}</td>
                     <td class="py-3 font-medium text-white">${Sanitizer.escapeHTML(b.obraSocial)}</td>
                     <td class="py-3 font-mono">${b.period}</td>
                     <td class="py-3">${b.visitsCount} (${formatARS(b.visitsTotal)})</td>
                     <td class="py-3">${b.equipmentCount} (${formatARS(b.comodatoTotal)})</td>
                     <td class="py-3 font-bold text-emerald-400">${formatARS(b.grandTotal)}</td>
                     <td class="py-3">
-                      <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${b.auditStatus === 'audited_zero_debit_risk' ? 'bg-emerald-950 text-emerald-300 border border-emerald-800' : 'bg-amber-950 text-amber-300 border border-amber-800'}">
+                      <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${b.auditStatus === 'audited_zero_debit_risk' ? 'bg-[#0f2d24] text-emerald-300 border border-[#1b5e4b]' : 'bg-amber-950 text-amber-300 border border-amber-800'}">
                         ${b.auditStatus === 'audited_zero_debit_risk' ? 'Cero Débito Garantizado' : 'Requiere Revisión'}
                       </span>
                     </td>
                     <td class="py-3 text-right">
-                      <button data-action="export-batch-csv" data-id="${b.id}" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold text-xs flex items-center gap-1 ml-auto">
+                      <button data-action="export-batch-csv" data-id="${b.id}" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-[#264b57] font-semibold text-xs flex items-center gap-1 ml-auto">
                         📥 Exportar CSV Excel
                       </button>
                     </td>

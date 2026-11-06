@@ -1,6 +1,6 @@
 {
   "name": "caretrack",
-  "version": "1.0.00",
+  "version": "1.0.01",
   "description": "CareTrack - Sistema Integral de Internación Domiciliaria (Home Care), Auditoría de Visitas Médicas y Trazabilidad de Equipamiento Biomédico en Comodato",
   "private": true,
   "type": "module",
